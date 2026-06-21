@@ -1,0 +1,33 @@
+/* Plantilla para nRF5340 network core.
+ *
+ * Aquí se indican los GPIO que la radio usará para controlar el switch RF
+ * de la matriz de antenas durante el CTE.
+ *
+ * IMPORTANTE:
+ * Estos pines deben coincidir con los reenviados desde el application core.
+ * Los valores son solo un ejemplo.
+ */
+
+&radio {
+    status = "okay";
+
+    /* Número de antenas previsto en la matriz. */
+    dfe-antenna-num = <4>;
+
+    /* Antena usada durante la parte normal del paquete antes del CTE.
+     * Este valor depende del diseño real de la matriz.
+     */
+    dfe-pdu-antenna = <0x0>;
+
+    /* GPIO de control del switch RF.
+     * Ejemplo:
+     * dfegpio0 -> SEL0
+     * dfegpio1 -> SEL1
+     * dfegpio2 -> SEL2
+     * dfegpio3 -> SEL3
+     */
+    dfegpio0-gpios = <&gpio0 4 0>;
+    dfegpio1-gpios = <&gpio0 5 0>;
+    dfegpio2-gpios = <&gpio0 6 0>;
+    dfegpio3-gpios = <&gpio0 7 0>;
+};

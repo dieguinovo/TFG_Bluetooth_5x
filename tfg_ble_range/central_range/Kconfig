@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: Apache-2.0
+mainmenu "central_range"
+source "Kconfig.zephyr"
+
+menu "Range test options"
+
+choice APP_PHY_CHOICE
+	prompt "Preferred PHY"
+	default APP_PHY_1M
+
+config APP_PHY_1M
+	bool "LE 1M"
+
+config APP_PHY_2M
+	bool "LE 2M"
+
+config APP_PHY_CODED
+	bool "LE Coded"
+
+endchoice
+
+endmenu

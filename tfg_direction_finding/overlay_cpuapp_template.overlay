@@ -1,0 +1,18 @@
+/* Plantilla para nRF5340 application core.
+ *
+ * Esta plantilla reenvía GPIO al network core para que puedan ser usados
+ * por la extensión Direction Finding de la radio.
+ *
+ * IMPORTANTE:
+ * Los pines P0.04, P0.05, P0.06 y P0.07 son solo un ejemplo. Deben
+ * cambiarse por los GPIO reales conectados al switch RF de la matriz.
+ */
+
+&gpio_fwd {
+    dfe-gpio-if {
+        gpios = <&gpio0 4 0>,
+                <&gpio0 5 0>,
+                <&gpio0 6 0>,
+                <&gpio0 7 0>;
+    };
+};
